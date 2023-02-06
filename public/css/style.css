@@ -1,0 +1,42 @@
+*{
+    font-family: 'Questrial', sans-serif;
+    list-style: none;
+}
+
+body{
+    background-color: rgb(47, 51, 55);
+    color: white;
+}
+
+.holder a{
+    color: white;
+    text-decoration: none;
+}
+
+.credits{
+    margin-top: 15px;
+}
+
+.credits a{
+    color: aqua;
+}
+
+button{
+    border-radius: 5px;
+    border: none;
+    height: 25px;
+}
+
+button, .buttonInput{
+    transition: all .1s;
+}
+
+button:hover, .buttonInput:hover{
+    background-color: darkgray;
+    color: white;
+    
+}
+
+img{
+    user-select: none;
+}

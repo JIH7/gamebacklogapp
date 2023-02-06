@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>You should play <%= gameData.name %></title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/gamePageStyle.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="holder flexContainer">
+        <h2>You should play...</h2>
+        <h1><%= gameData.name %></h1>
+        <img src="<%= gameData.background_image %> " alt="">
+
+        <% if (gameData.metacritic !== null) { %>
+            <h2>Metacritic: <%= gameData.metacritic %></h2>
+        <% } %>
+
+        <h3>Platforms: <% for(let i = 0; i < gameData.platforms.length; i++) { %>
+            <% if(i < gameData.platforms.length - 1) {%>
+                <span><%= gameData.platforms[i].platform.name %>, </span>
+            <% }else{ %>
+                <span><%= gameData.platforms[i].platform.name %></span>
+        <% }} %></h3> 
+
+        <% if(gameData.genres.length > 0) { %> 
+        <h3>Genres: <% for(let i = 0; i < gameData.genres.length; i++) { %>
+            <% if(i < gameData.genres.length - 1) {%>
+                <span><%= gameData.genres[i].name %>, </span>
+            <% }else{ %>
+                <span><%= gameData.genres[i].name %></span>
+        <% }}} %></h3>
+
+        <a href="/"><button>Back to the list!</button></a>
+    </div>
+
+    <div class="credits"><span>App by <a href="jeremyhelsel.com">Jeremy Helsel</a></span></div>
+</body>
+</html>

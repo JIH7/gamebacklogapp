@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What game should I play?</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/mainPageStyle.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="holder">
+        <h1>What game should I play?</h1>
+
+        <a href="/randomGamePage"><button>Give me a game!</button></a>
+
+        <ul>
+            <% for(let i = 0; i < items.length; i++) { %>
+                <li class="item">
+                    <a href=<%= "/gamePage?name=" + encodeURI(items[i].game) %>><span><%= items[i].game %></span></a>
+                    <span class="fa fa-trash"></span>
+                </li>
+            <% } %>
+        </ul>
+
+        <h2>Add a game:</h2>
+
+        <form action="/addGame" method="POST">
+            <input type="text" placeholder="New Game" name="gameName" class="textInput">
+            <input type="submit" class="buttonInput">
+        </form>
+    </div>
+
+    <div class="credits"><span>App by <a href="jeremyhelsel.com">Jeremy Helsel</a></span></div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+img{
+    width: 100%;
+    border-radius: 30px;
+}
+
+.holder{
+    max-width: 1200px;
+}
